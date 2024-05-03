@@ -24,6 +24,7 @@ public class OpenWindow {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				fileChooser.showOpenDialog(frame);
+				AlertWindow.create("Sorry!", "This has not been implemented yet!", AlertTypes.WARNING);
 			}
 		});
 		
