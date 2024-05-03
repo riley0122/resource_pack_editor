@@ -1,4 +1,4 @@
-package dev.riley0122.resource_pack_editor;
+package dev.riley0122.rpe;
 
 public class App 
 {

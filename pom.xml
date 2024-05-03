@@ -19,5 +19,23 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <mainClass>dev.riley0122.rpe.App</mainClass>
   </properties>
+
+	<build>
+	  <plugins>
+    	 <plugin>
+      	   <groupId>org.apache.maven.plugins</groupId>
+      	   <artifactId>maven-jar-plugin</artifactId>
+      	   <configuration>
+         	 <archive>
+          	   <manifestEntries>
+            	 <Main-Class>${mainClass}</Main-Class>
+          	   </manifestEntries>
+        	 </archive>
+      	   </configuration>
+    	 </plugin>
+  	  </plugins>
+	</build>
+
 </project>
