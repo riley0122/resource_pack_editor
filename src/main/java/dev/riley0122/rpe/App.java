@@ -1,9 +1,12 @@
 package dev.riley0122.rpe;
 
+import dev.riley0122.rpe.Windows.*;
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+    	WindowStyler.apply();
+        OpenWindow.open();
     }
 }
