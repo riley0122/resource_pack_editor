@@ -24,7 +24,7 @@ public class OpenSceen {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				fileChooser.showOpenDialog(frame);
-				AlertScreen.create("Sorry!", "This has not been implemented yet!", AlertTypes.WARNING);
+				AlertScreen.warn("Sorry!", "This has not been implemented yet!");
 			}
 		});
 		

@@ -6,6 +6,14 @@ import java.awt.Font;
 import java.io.*;
 
 public class AlertScreen {
+	public static void warn(String title, String description) {
+		create(title, description, AlertTypes.WARNING);
+	}
+	
+	public static void error(String title, String description) {
+		create(title, description, AlertTypes.ERROR);
+	}
+	
 	public static void create(String title, String description) {
 		create(title, description, AlertTypes.INFO);
 	}
@@ -35,6 +43,8 @@ public class AlertScreen {
 			frame.setTitle("Info");
 		}
 		
+		frame.setAlwaysOnTop(true);
+		frame.setResizable(false);
 		frame.setLayout(null);
 		frame.setSize(300, 150);
 		frame.setVisible(true);
