@@ -5,9 +5,11 @@ import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.awt.BorderLayout;
 
 import javax.swing.*;
-import java.awt.BorderLayout;
+
+import dev.riley0122.rpe.Loader.*;
 
 public class LoadingScreen {
 	private static JWindow window;
@@ -61,5 +63,8 @@ public class LoadingScreen {
 		window.setBackground(new Color(255, 255, 255));
 		window.setAlwaysOnTop(true);
 		window.setVisible(true);
+		
+		// Actually start loading the resource pack
+		new Thread(new PackLoader()).start();
 	}
 }

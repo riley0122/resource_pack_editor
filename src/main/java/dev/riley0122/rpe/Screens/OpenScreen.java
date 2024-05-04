@@ -9,6 +9,8 @@ import java.io.*;
 import javax.swing.*;
 
 public class OpenScreen {
+	public static String packLocation;
+	
 	public static void open() {
 		JFrame frame = new JFrame();
 		JButton button = new JButton("Open resource pack");
@@ -26,7 +28,13 @@ public class OpenScreen {
 		button.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				fileChooser.showOpenDialog(frame);
+				int result = fileChooser.showOpenDialog(frame);
+				if (result == JFileChooser.APPROVE_OPTION) {
+					packLocation = fileChooser.getSelectedFile().getAbsolutePath();
+				} else {
+					AlertScreen.create("Cancelled", "Opening resource pack was cancelled.");
+					return;
+				}
 				LoadingScreen.open();
 				frame.setVisible(false);
 				frame.dispose();
