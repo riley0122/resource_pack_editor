@@ -1,5 +1,7 @@
 package dev.riley0122.rpe.Screens;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -34,11 +36,14 @@ public class OpenScreen {
 		label.setBounds(width/2 - (width - width/5)/2, 0,  width - width/5, 50);
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		
 		frame.add(label);
 		frame.add(button);
 		frame.setSize(width, height);
 		frame.setResizable(false);
 		frame.setLayout(null);
+		frame.setLocation((dim.width / 2) - (width / 2), (dim.height / 2) - (height / 2));
 		frame.setVisible(true);
 	}
 }

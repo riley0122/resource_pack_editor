@@ -2,7 +2,9 @@ package dev.riley0122.rpe.Screens;
 
 import javax.swing.*;
 
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.io.*;
 
 public class AlertScreen {
@@ -43,10 +45,13 @@ public class AlertScreen {
 			frame.setTitle("Info");
 		}
 		
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		
 		frame.setAlwaysOnTop(true);
 		frame.setResizable(false);
 		frame.setLayout(null);
 		frame.setSize(300, 150);
+		frame.setLocation((dim.width / 2) - (300 / 2), (dim.height / 2) - (150 / 2));
 		frame.setVisible(true);
 	}
 }
