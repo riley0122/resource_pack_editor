@@ -1,11 +1,11 @@
-package dev.riley0122.rpe.Windows;
+package dev.riley0122.rpe.Screens;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
 import javax.swing.*;
 
-public class OpenWindow {
+public class OpenSceen {
 	public static void open() {
 		JFrame frame = new JFrame();
 		JButton button = new JButton("Open resource pack");
@@ -24,7 +24,7 @@ public class OpenWindow {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				fileChooser.showOpenDialog(frame);
-				AlertWindow.create("Sorry!", "This has not been implemented yet!", AlertTypes.WARNING);
+				AlertScreen.create("Sorry!", "This has not been implemented yet!", AlertTypes.WARNING);
 			}
 		});
 		

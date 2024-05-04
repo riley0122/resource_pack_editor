@@ -1,11 +1,11 @@
-package dev.riley0122.rpe.Windows;
+package dev.riley0122.rpe.Screens;
 
 import javax.swing.*;
 
 import java.awt.Font;
 import java.io.*;
 
-public class AlertWindow {
+public class AlertScreen {
 	public static void create(String title, String description) {
 		create(title, description, AlertTypes.INFO);
 	}
