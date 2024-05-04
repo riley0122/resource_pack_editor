@@ -2,10 +2,11 @@ package dev.riley0122.rpe.Screens;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.io.*;
 import javax.swing.*;
 
-public class OpenSceen {
+public class OpenScreen {
 	public static void open() {
 		JFrame frame = new JFrame();
 		JButton button = new JButton("Open resource pack");
@@ -25,6 +26,9 @@ public class OpenSceen {
 			public void actionPerformed(ActionEvent e) {
 				fileChooser.showOpenDialog(frame);
 				AlertScreen.warn("Sorry!", "This has not been implemented yet!");
+				LoadingScreen.open();
+				frame.setVisible(false);
+				frame.dispose();
 			}
 		});
 		
