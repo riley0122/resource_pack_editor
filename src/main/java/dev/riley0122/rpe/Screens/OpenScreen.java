@@ -25,7 +25,6 @@ public class OpenScreen {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				fileChooser.showOpenDialog(frame);
-				AlertScreen.warn("Sorry!", "This has not been implemented yet!");
 				LoadingScreen.open();
 				frame.setVisible(false);
 				frame.dispose();

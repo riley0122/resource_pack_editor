@@ -7,6 +7,6 @@ public class App
     public static void main( String[] args )
     {
     	SceenStyler.apply();
-        OpenSceen.open();
+        OpenScreen.open();
     }
 }
