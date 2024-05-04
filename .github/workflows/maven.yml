@@ -13,7 +13,8 @@ on:
 
 jobs:
   build:
-
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
 
     steps:
@@ -34,4 +35,4 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
         tag_name: ${{ steps.getVersion.outputs.version }}
-        files: "target/rpe-${{ steps.getVersion.outputs.version }}.jar"
+        files: "target/resource_pack_editor-${{ steps.getVersion.outputs.version }}-shaded.jar"
