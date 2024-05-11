@@ -21,7 +21,7 @@ public class McMetaMaker {
 		
 		data = "{\n"
 			 + "\t\"pack\": {\n"
-			 + "\t\t\"pack_fomat\": 41,\n"
+			 + "\t\t\"pack_format\": 41,\n"
 			 + "\t\t\"description\": \"" + getDescription() + "\"\n"
 			 + "\t}\n"
 			 + "}\n";
