@@ -5,8 +5,14 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
+
 import java.io.*;
+
 import javax.swing.*;
+
+import dev.riley0122.rpe.App;
+
+import java.util.prefs.Preferences;
 
 public class OpenScreen {
 	public static String packLocation;
@@ -22,7 +28,11 @@ public class OpenScreen {
 		
 		fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		fileChooser.setAcceptAllFileFilterUsed(false);
-		fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+		
+		Preferences prefs = Preferences.userNodeForPackage(App.class);
+		String directoryToOpen = prefs.get(App.PREF_KEY_LAST_DIRECTORY, System.getProperty("user.home"));
+		
+		fileChooser.setCurrentDirectory(new File(directoryToOpen));
 		
 		button.setBounds(width/2 - (width - width/5)/2, height/2 - 50/2, width - width/5, 50);
 		button.addActionListener(new ActionListener() {
@@ -31,6 +41,7 @@ public class OpenScreen {
 				int result = fileChooser.showOpenDialog(frame);
 				if (result == JFileChooser.APPROVE_OPTION) {
 					packLocation = fileChooser.getSelectedFile().getAbsolutePath();
+					prefs.put(App.PREF_KEY_LAST_DIRECTORY, packLocation);
 				} else {
 					AlertScreen.create("Cancelled", "Opening resource pack was cancelled.");
 					return;

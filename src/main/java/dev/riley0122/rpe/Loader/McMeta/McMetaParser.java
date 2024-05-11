@@ -15,16 +15,19 @@ public class McMetaParser {
 		
 		ObjectMapper mapper = new ObjectMapper();
 		try {
-			JsonNode node = mapper.readTree(data);
-			if (!node.has("pack")) {
-				AlertScreen.error("Invalid pack.mcmeta", "pack.mcmeta doesn't have the required 'pack' field!");
-				LoadingScreen.UpdateStatus("Invalid pack.mcmeta!");
-				return null;
-			}
+//			JsonNode node = mapper.readTree(data);
+//			if (!node.has("pack")) {
+//				AlertScreen.error("Invalid pack.mcmeta", "pack.mcmeta doesn't have the required 'pack' field!");
+//				LoadingScreen.UpdateStatus("Invalid pack.mcmeta!");
+//				return null;
+//			}
 			
-			McMetaDataPack packData = mapper.readValue(node.get("pack").toString(), McMetaDataPack.class);
+//			McMetaDataPack packData = mapper.readValue(node.get("pack").toString(), McMetaDataPack.class);
 			
-			return new McMetaData(packData, java.util.Optional.empty(), java.util.Optional.empty());
+			McMetaData packData = mapper.readValue(data, McMetaData.class);
+			
+//			return new McMetaData(packData, java.util.Optional.empty(), java.util.Optional.empty());
+			return packData;
 		} catch (JsonMappingException e) {
 			LoadingScreen.UpdateStatus("Failed to map pack.mcmeta values!");
 			AlertScreen.error("Failed to map pack.mcmeta values!", e.getMessage());

@@ -1,5 +1,7 @@
 package dev.riley0122.rpe.Loader.McMeta.records;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public record McMetaDataOverlays(
-	McMetaDataOverlaysEntry[] entries
+	@JsonProperty("entries") McMetaDataOverlaysEntry[] entries
 ) {}

@@ -23,6 +23,8 @@ public class PackLoader implements Runnable {
 		
 		McMeta packInfo = new McMeta(location);
 		
+		AlertScreen.create("Desc", packInfo.pack.description());
+		
 		LoadingScreen.UpdateStatus("Loaded pack.mcmeta");
 	}
 }

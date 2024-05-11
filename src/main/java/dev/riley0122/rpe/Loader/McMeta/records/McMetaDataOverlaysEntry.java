@@ -1,6 +1,8 @@
 package dev.riley0122.rpe.Loader.McMeta.records;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public record McMetaDataOverlaysEntry(
-	int[] formats,
-	String directory
+	@JsonProperty("formats") int[] formats,
+	@JsonProperty("directory") String directory
 ) {}
