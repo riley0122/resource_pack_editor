@@ -8,7 +8,14 @@ public class App
 	
     public static void main( String[] args )
     {
-    	SceenStyler.apply();
-        OpenScreen.open();
+    	try {			
+    		SceenStyler.apply();
+    		OpenScreen.open();
+		} catch (Exception e) {
+			System.out.println("Something went wrong!\n\n");
+			System.out.println(e.getMessage() + "\n");
+			System.out.println(e.getStackTrace());
+			System.exit(1);
+		}
     }
 }
