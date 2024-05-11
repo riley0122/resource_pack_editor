@@ -26,8 +26,12 @@ public class McMeta {
 		
 		if (parsedData != null) {
 			this.pack = parsedData.pack();
-			this.overlays = parsedData.overlays().orElse(null);
-			this.filter = parsedData.filter().orElse(null);
+			if (parsedData.overlays() != null) {				
+				this.overlays = parsedData.overlays().orElse(null);
+			}
+			if (parsedData.filter() != null) {				
+				this.filter = parsedData.filter().orElse(null);
+			}
 		}
 	}
 }
